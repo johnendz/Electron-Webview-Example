@@ -53,7 +53,7 @@ app.on('ready', function() {
     mainWindow.loadURL(`https://github.com/johnendz`,{
         extraHeaders: `Content-Security-Policy: default-src 'https://github.com/johnendz'`
     });
-    mainWindow.webContents.executeJavaScript(""); // aqui você pode inserir uma variavel no browser, possibilitando o site reconhecer a varivel
+    mainWindow.webContents.executeJavaScript(""); //aqui você pode inserir uma variavel no browser, possibilitando o site reconhecer a varivel
     const ses = mainWindow.webContents.session;
     ses.webRequest.onHeadersReceived((details, callback) => {
         callback({responseHeaders: `default-src 'https://github.com/johnendz'`})
